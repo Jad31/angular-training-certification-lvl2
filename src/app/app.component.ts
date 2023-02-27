@@ -1,16 +1,13 @@
+import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { NbaTeam } from './models/nba-team.model';
-import { FreeNbaApiServiceTsService } from './services/free-nba-api.service.ts.service';
+import { SelectTeamComponent } from './components/select-team/select-team.component';
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [HttpClientModule, SelectTeamComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  nbaTeams: Observable<NbaTeam>;
-
-  constructor(private freeNbaApiServiceTsService: FreeNbaApiServiceTsService) {
-    this.nbaTeams = this.freeNbaApiServiceTsService.nbaTeams;
-  }
+  constructor() {}
 }

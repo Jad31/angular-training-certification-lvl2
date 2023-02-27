@@ -1,1 +1,25 @@
-<p>select-team works!</p>
+<mat-form-field appearance="fill">
+  <mat-label>Select an NBA Team:</mat-label>
+  <mat-select id="teamSelect" [(value)]="selectedTeam">
+    <mat-option
+      *ngFor="let nbaTeam of nbaTeams$ | async"
+      [value]="nbaTeam.full_name"
+    >
+      {{ nbaTeam.full_name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<button
+  id="trackBtn"
+  mat-raised-button
+  color="primary"
+  (click)="trackTeam()"
+  [disabled]="selectedTeam === ''"
+>
+  Track Team
+</button>
+
+<ng-container *ngFor="let teamResult of teamResults$ | async">
+  <app-team-card [teamResult]="teamResult"></app-team-card>
+</ng-container>
