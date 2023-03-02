@@ -1,4 +1,59 @@
-.team-card {
-  max-width: 400px;
-  margin-bottom: 8px;
+.mat-success {
+  background-color: green;
+  color: #fff;
+}
+
+.result {
+  display: flex;
+  flex-direction: row;
+}
+
+.result > * {
+  padding: 0px 6px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+mat-card {
+  max-width: fit-content;
+  max-height: 400px;
+}
+
+mat-card-actions {
+  display: flex;
+  flex-direction: row;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+mat-card-header {
+  display: block;
+}
+
+mat-card-title-group > div {
+  flex: 1;
+}
+mat-card-title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }

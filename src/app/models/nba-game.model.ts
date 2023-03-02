@@ -15,9 +15,10 @@ export interface NbaGame {
 }
 
 export interface NbaGamesResult {
+  uuid: string;
   team_name: string;
   team_abbreviation: string;
-  conference: string;
+  conference: 'East' | 'West';
   games: NbaGame[];
   results: Array<'win' | 'lose'>;
   average_scored: number;

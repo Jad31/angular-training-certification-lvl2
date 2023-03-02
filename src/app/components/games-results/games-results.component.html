@@ -1,0 +1,38 @@
+<mat-card>
+  <ng-container *ngIf="gameResults">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>
+          {{ gameResults.team_name }} [{{ gameResults.team_abbreviation }}]
+        </mat-card-title>
+        <mat-card-subtitle>{{
+          gameResults.conference | conference
+        }}</mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Scores of past 12 days:</p>
+      <div
+        class="score"
+        *ngFor="let gameResult of gameResults.games; let i = index"
+      >
+        <b>{{ team }}</b>
+        <p>{{ gameResult.home_team_score }}</p>
+        -
+        <p>{{ gameResult.visitor_team_score }}</p>
+        <b>{{ concurrentTeams[i] }}</b>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        color="success"
+        [routerLink]="['']"
+        routerLinkActive="active"
+        id="backBtn"
+      >
+        << Back to all team stats
+      </button>
+    </mat-card-actions>
+  </ng-container>
+</mat-card>

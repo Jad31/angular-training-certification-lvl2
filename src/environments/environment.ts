@@ -3,8 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
 };
+
+export const rapidApiKeys = {
+  XRapidAPIKey: '2QMXSehDLSmshDmRQcKUIAiQjIZAp1UvKUrjsnewgqSP6F5oBX',
+  XRapidAPIHost: 'free-nba.p.rapidapi.com',
+};
+
+export const rapidBaseUrl = 'https://free-nba.p.rapidapi.com';
+export const logoBaseUrl = 'https://interstate21.com/nba-logos';
 
 /*
  * For easier debugging in development mode, you can import the following file
